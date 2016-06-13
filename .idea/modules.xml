@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javaslang-sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/javaslang-sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javaslang-sandbox_main.iml" filepath="$PROJECT_DIR$/.idea/modules/javaslang-sandbox_main.iml" group="javaslang-sandbox" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javaslang-sandbox_test.iml" filepath="$PROJECT_DIR$/.idea/modules/javaslang-sandbox_test.iml" group="javaslang-sandbox" />
+    </modules>
+  </component>
+</project>
