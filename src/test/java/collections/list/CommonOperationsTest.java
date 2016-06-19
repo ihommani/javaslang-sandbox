@@ -17,4 +17,9 @@ public class CommonOperationsTest {
     public void should_convert_string_to_integer() {
         Assertions.assertThat(CommonOperations.toInteger().apply("3")).isEqualTo(3);
     }
+
+    @Test
+    public void should_fail_to_convert_string_to_integer() {
+        Assertions.assertThat(CommonOperations.toInteger().apply("nonInteger")).isEqualTo(3);
+    }
 }
