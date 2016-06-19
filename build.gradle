@@ -25,6 +25,9 @@ dependencies {
     // Add compile dependency to javaslang
     compile 'io.javaslang:javaslang:2.0.2'
 
+
+    // http://mvnrepository.com/artifact/org.assertj/assertj-core
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.4.1'
     // Use TestNG framework, also requires calling test.useTestNG() below
     testCompile 'org.testng:testng:6.9.10'
 }
