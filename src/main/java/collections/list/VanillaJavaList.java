@@ -14,4 +14,13 @@ public class VanillaJavaList {
                 .mapToInt(value -> value)
                 .sum();
     }
+
+    public Integer biggerOperation(String divisor, String... elements) {
+        return Arrays.stream(elements)
+                .map(s -> s + "0")
+                .map(Integer::valueOf)
+                .map(integer -> integer / Integer.valueOf(divisor))
+                .mapToInt(value -> value)
+                .sum();
+    }
 }

@@ -20,4 +20,14 @@ public class ListSandBoxTest {
     public void should_sum_elements_vanilla() {
         Assertions.assertThat(vanillaJavaList.sumElements("1", "2", "3")).isEqualTo(60);
     }
+
+
+    @Test
+    public void should_sum_elements_and_then_divide() {
+        Assertions.assertThat(listSandBox.biggerOperation("10", "1", "2", "3")).isEqualTo(6);
+    }
+    @Test
+    public void should_sum_elements_and_then_divide_elements() {
+        Assertions.assertThat(vanillaJavaList.biggerOperation("10", "1", "2", "3")).isEqualTo(6);
+    }
 }
