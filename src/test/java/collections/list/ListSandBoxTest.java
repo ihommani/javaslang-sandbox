@@ -114,4 +114,19 @@ public class ListSandBoxTest {
         Assertions.assertThat(span._1).hasSize(4);
         Assertions.assertThat(span._2).hasSize(3);
     }
+
+    @Test
+    public void should_scan_elements() {
+        List<Integer> scan = List.of(10, 20, 30, 40, 50)
+                .scan(0, (integer, integer2) -> integer + integer2);
+
+        Assertions.assertThat(scan).hasSize(6).containsOnly(0, 10, 30, 60, 100, 150);
+    }
+
+    @Test
+    public void should_add_an_element_between_each_element_of_a_given_list() {
+        List<Integer> intersperse = List.fill(6, () -> random.nextInt()).intersperse(4);
+        Tuple2<List<Integer>, List<Integer>> partition = intersperse.partition(integer -> integer.equals(4));
+        Assertions.assertThat(partition._1).isEqualTo(6).containsOnly(4);
+    }
 }
