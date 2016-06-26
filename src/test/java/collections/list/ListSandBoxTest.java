@@ -70,6 +70,29 @@ public class ListSandBoxTest {
         java.util.Map<String, String> assocation = vanillaJavaList.associateByTwo(strings);
 
         Assertions.assertThat(assocation).hasSize(2).containsOnlyKeys("hello", "james").containsValues("world", "bond");
+    }
 
+    @Test
+    public void should_zip_elements_with_one_another() {
+        Assertions.assertThat(List.empty().push("james").push("hello").zip(List.empty().push("bond").push("world")))
+                .hasSize(2).containsOnly(Tuple.of("hello", "world"), Tuple.of("james", "bond"));
+    }
+
+    @Test
+    public void should_zip_elements_with_one_another_vanilla() {
+        // given
+        java.util.List<String> elements1 = new ArrayList<>();
+        java.util.List<String> elements2 = new ArrayList<>();
+
+        elements1.add("hello");
+        elements1.add("james");
+        elements2.add("world");
+        elements2.add("bond");
+
+        // when
+        java.util.Map<String, String> zippedElements = vanillaJavaList.zipStringElements(elements1, elements2);
+
+        // then
+        Assertions.assertThat(zippedElements).hasSize(2).containsOnlyKeys("hello", "james").containsValues("world", "bond");
     }
 }

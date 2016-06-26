@@ -46,4 +46,24 @@ public class VanillaJavaList {
         return element -> elements.indexOf(element) % 2 == 0;
     }
 
+
+    /**
+     * Zip element1 with element2. This method is already provided in javaslang
+     * @param elements1
+     * @param elements2
+     * @return
+     */
+    public Map<String, String> zipStringElements(List<String> elements1, List<String> elements2) {
+
+        Map<String, String> element2ByElement1 = new HashMap<>();
+
+        Iterator<String> iterator1 = elements1.iterator();
+        Iterator<String> iterator2 = elements2.iterator();
+
+        while (iterator1.hasNext() && iterator2.hasNext()) {
+            element2ByElement1.put(iterator1.next(), iterator2.next());
+        }
+        return element2ByElement1;
+    }
+
 }
