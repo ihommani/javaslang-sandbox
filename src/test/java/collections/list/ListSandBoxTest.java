@@ -1,6 +1,7 @@
 package collections.list;
 
 import javaslang.Tuple;
+import javaslang.Tuple2;
 import javaslang.collection.List;
 import javaslang.collection.Map;
 import javaslang.collection.Stream;
@@ -94,5 +95,14 @@ public class ListSandBoxTest {
 
         // then
         Assertions.assertThat(zippedElements).hasSize(2).containsOnlyKeys("hello", "james").containsValues("world", "bond");
+    }
+
+    @Test
+    public void should_split_the_list_into_2_lists() {
+
+        Tuple2<List<String>, List<String>> span = List.of("aaaaaa", "aaaaaaa", "aa", "aaaabaaa", "a", "bbbb", "azfbgvcsg").span(s -> !s.contains("b"));
+
+        Assertions.assertThat(span._1).hasSize(3);
+        Assertions.assertThat(span._2).hasSize(3);
     }
 }
