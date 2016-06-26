@@ -100,9 +100,18 @@ public class ListSandBoxTest {
     @Test
     public void should_split_the_list_into_2_lists() {
 
-        Tuple2<List<String>, List<String>> span = List.of("aaaaaa", "aaaaaaa", "aa", "aaaabaaa", "a", "bbbb", "azfbgvcsg").span(s -> !s.contains("b"));
+        Tuple2<List<String>, List<String>> span = List.of("aaaaaa", "aaabaaaa", "aa", "aaaabaaa", "a", "bbbb", "azfbgvcsg").span(s -> !s.contains("b"));
 
-        Assertions.assertThat(span._1).hasSize(3);
+        Assertions.assertThat(span._1).hasSize(1);
+        Assertions.assertThat(span._2).hasSize(4);
+    }
+
+    @Test
+    public void should_partition_the_list_into_2_lists() {
+
+        Tuple2<List<String>, List<String>> span = List.of("aaaaaa", "aaaaaaa", "aa", "aaaabaaa", "a", "bbbb", "azfbgvcsg").partition(s -> !s.contains("b"));
+
+        Assertions.assertThat(span._1).hasSize(4);
         Assertions.assertThat(span._2).hasSize(3);
     }
 }
